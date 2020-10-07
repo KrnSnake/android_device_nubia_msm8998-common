@@ -85,6 +85,12 @@ function blob_fixup() {
         vendor/bin/thermal-engine)
             sed -i "s|/system/etc/.tp/|/vendor/etc/.tp/|g" "${2}"
             ;;
+        vendor/lib/hw/vulkan.msm8998.so)
+            "${PATCHELF}" --set-soname "vulkan.msm8998.so" "${2}"
+            ;;
+        vendor/lib64/hw/vulkan.msm8998.so)
+            "${PATCHELF}" --set-soname "vulkan.msm8998.so" "${2}"
+            ;;
     esac
 }
 
